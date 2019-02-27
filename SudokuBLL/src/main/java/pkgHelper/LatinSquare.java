@@ -49,5 +49,31 @@ public class LatinSquare {
 		return doesElementExist;
 		
 	}
+	
+	public boolean hasAllValue(int[] arr1,int[] arr2) {
+		boolean hasAllValue = false;
+		boolean hasAllValueArr1 = false;
+		boolean hasAllValueArr2 = false;
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		int[] example = {1,2,3,4,5,6,7,8,9};
+		if (arr1 == null) {
+			return false;
+		}
+		if (arr2 == null) {
+			return false;
+		}
+		
+		if(Arrays.equals(arr1,example)) {
+			hasAllValueArr1 = true;
+		}
+		if(Arrays.equals(arr2,example)) {
+			hasAllValueArr2 = true;
+		}
+		if(hasAllValueArr1 && hasAllValueArr2) {
+			hasAllValue = true;
+		}
+		return hasAllValue;
+	}
 }
 
