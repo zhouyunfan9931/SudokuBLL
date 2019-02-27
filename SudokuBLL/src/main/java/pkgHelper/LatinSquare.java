@@ -2,19 +2,19 @@ package pkgHelper;
 import java.util.Arrays;
 
 public class LatinSquare {
-	private int[] LatinSquare;
+	private int[][] LatinSquare;
 	
 	public LatinSquare() {
 		
 	}
-	public LatinSquare(int[] latinSquare) {
+	public LatinSquare(int[][] latinSquare) {
 		super();
 		LatinSquare = latinSquare;
 	}
-	public int[] getLatinSquare() {
+	public int[][] getLatinSquare() {
 		return LatinSquare;
 	}
-	public void setLatinSquare(int[] latinSquare) {
+	public void setLatinSquare(int[][] latinSquare) {
 		LatinSquare = latinSquare;
 	}
 	
@@ -52,28 +52,44 @@ public class LatinSquare {
 	
 	public boolean hasAllValue(int[] arr1,int[] arr2) {
 		boolean hasAllValue = false;
-		boolean hasAllValueArr1 = false;
-		boolean hasAllValueArr2 = false;
-		Arrays.sort(arr1);
-		Arrays.sort(arr2);
-		int[] example = {1,2,3,4,5,6,7,8,9};
+
+		LatinSquare way = new LatinSquare();
 		if (arr1 == null) {
 			return false;
 		}
-		if (arr2 == null) {
-			return false;
+		for (int i : arr2) {
+			if (way.doesElementExist(arr1, i)){
+				hasAllValue = true;
+			}else{
+				return false;
+			}
 		}
 		
-		if(Arrays.equals(arr1,example)) {
-			hasAllValueArr1 = true;
-		}
-		if(Arrays.equals(arr2,example)) {
-			hasAllValueArr2 = true;
-		}
-		if(hasAllValueArr1 && hasAllValueArr2) {
-			hasAllValue = true;
-		}
 		return hasAllValue;
+	}
+	
+	public int[] getColumn(int Col) {
+		int[] getColumn = new int[LatinSquare[Col].length];
+		for (int i=0,j =1 ;i<LatinSquare[Col].length;i++) {
+			getColumn[i]=LatinSquare[i][Col];
+		}
+		return getColumn;
+	}
+	
+	public int[] getRow(int Row) {
+		int[] getRow = new int[LatinSquare[Row].length];
+		for (int i=0;i<LatinSquare[Row].length;i++) {
+			getRow[i]=LatinSquare[Row][i];
+		}
+		return getRow;
+	}
+	
+	public boolean isLatinSquare() {
+		return false;
+	}
+	
+	public boolean containsZero() {
+		return false;
 	}
 }
 
