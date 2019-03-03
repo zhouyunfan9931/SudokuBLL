@@ -70,7 +70,7 @@ public class LatinSquare {
 	
 	public int[] getColumn(int Col) {
 		int[] getColumn = new int[LatinSquare[Col].length];
-		for (int i=0,j =1 ;i<LatinSquare[Col].length;i++) {
+		for (int i=0 ;i<LatinSquare[Col].length;i++) {
 			getColumn[i]=LatinSquare[i][Col];
 		}
 		return getColumn;
@@ -85,11 +85,47 @@ public class LatinSquare {
 	}
 	
 	public boolean isLatinSquare() {
-		return false;
+		boolean isLatinSquare = false;
+		LatinSquare getA = new LatinSquare();
+		for (int j=0;j<LatinSquare.length;j++) {
+			int[] er = getA.getRow(j);
+			Arrays.sort(er);
+			for (int i = 0;i<er.length-1;i++) {
+				if (er[i]==er[i+1]) {
+					return false;					
+				}else {
+					isLatinSquare = true;
+				}
+			}
+		}
+		for (int j=0;j<LatinSquare.length;j++) {
+			int[] ec = getA.getColumn(j);
+			Arrays.sort(ec);
+			for (int i = 0;i<ec.length-1;i++) {
+				if (ec[i]==ec[i+1]) {
+					return false;					
+				}else {
+					isLatinSquare = true;
+				}
+			}
+		}	
+		return isLatinSquare;	 
 	}
 	
 	public boolean containsZero() {
-		return false;
+		boolean containsZero = false;
+		for (int i[] : LatinSquare) {
+			for (int j : i) {
+				if (j == 0) {
+					containsZero = true;
+					break;
+				}
+				
+			}
+			
+			
+		}
+		return containsZero;
 	}
 }
 
