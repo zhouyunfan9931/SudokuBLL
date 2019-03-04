@@ -119,11 +119,8 @@ public class LatinSquare {
 				if (j == 0) {
 					containsZero = true;
 					break;
-				}
-				
+				}			
 			}
-			
-			
 		}
 		return containsZero;
 	}
