@@ -148,12 +148,20 @@ public class LatinSquareTest {
 		LatinSquare lq = new LatinSquare();
 		int[][] latinSquare = {{3,3,3},{3,3,3},{3,3,3}};
 		lq.setLatinSquare(latinSquare);
-		assertFalse(lq.containsZero());
+		assertFalse(lq.isLatinSquare());
 		
 		
 		
 		
 		
+	}
+	
+	@Test
+	public void isLatinSquare_test2() {
+		LatinSquare lq = new LatinSquare();
+		int[][] latinSquare = {{1,3,2},{2,1,3},{3,2,1}};
+		lq.setLatinSquare(latinSquare);
+		assertTrue(lq.isLatinSquare());
 	}
 	
 	@Test

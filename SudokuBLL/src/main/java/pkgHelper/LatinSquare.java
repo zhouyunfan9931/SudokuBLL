@@ -86,9 +86,8 @@ public class LatinSquare {
 	
 	public boolean isLatinSquare() {
 		boolean isLatinSquare = false;
-		LatinSquare getA = new LatinSquare();
 		for (int j=0;j<LatinSquare.length;j++) {
-			int[] er = getA.getRow(j);
+			int[] er = getRow(j);
 			Arrays.sort(er);
 			for (int i = 0;i<er.length-1;i++) {
 				if (er[i]==er[i+1]) {
@@ -99,7 +98,7 @@ public class LatinSquare {
 			}
 		}
 		for (int j=0;j<LatinSquare.length;j++) {
-			int[] ec = getA.getColumn(j);
+			int[] ec = getColumn(j);
 			Arrays.sort(ec);
 			for (int i = 0;i<ec.length-1;i++) {
 				if (ec[i]==ec[i+1]) {
