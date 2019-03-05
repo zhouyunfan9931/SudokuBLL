@@ -86,28 +86,20 @@ public class LatinSquare {
 	
 	public boolean isLatinSquare() {
 		boolean isLatinSquare = false;
-		for (int j=0;j<LatinSquare.length;j++) {
-			int[] er = getRow(j);
-			Arrays.sort(er);
-			for (int i = 0;i<er.length-1;i++) {
-				if (er[i]==er[i+1]) {
+		for (int i=0;i<LatinSquare.length;i++) {
+			if(hasDuplicates(getRow(i))) {
 					return false;					
 				}else {
 					isLatinSquare = true;
 				}
 			}
-		}
 		for (int j=0;j<LatinSquare.length;j++) {
-			int[] ec = getColumn(j);
-			Arrays.sort(ec);
-			for (int i = 0;i<ec.length-1;i++) {
-				if (ec[i]==ec[i+1]) {
+			if(hasDuplicates(getColumn(j))) {
 					return false;					
 				}else {
 					isLatinSquare = true;
 				}
-			}
-		}	
+			}	
 		return isLatinSquare;	 
 	}
 	
