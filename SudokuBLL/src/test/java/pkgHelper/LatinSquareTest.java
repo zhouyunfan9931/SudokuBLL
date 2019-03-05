@@ -95,53 +95,49 @@ public class LatinSquareTest {
 	@Test
 	public void getColumn_test1() {
 		int Col = 1;
-		int[][] LatinSquare = {{1,2,3},{3,1,2},{2,3,1}};
-		int[] getColumn = new int[LatinSquare[Col].length];
-		for (int i=0 ;i<LatinSquare[Col].length;i++) {
-			getColumn[i]=LatinSquare[i][Col];
-		}
+		int[][] latinSquare = {{1,2,3},{3,1,2},{2,3,1}};
+		LatinSquare lq = new LatinSquare();	
+		lq.setLatinSquare(latinSquare);
+		
 		int[] example = {1,3,2};
-		assertFalse(Arrays.equals(getColumn,example ));
+		assertFalse(Arrays.equals(lq.getColumn(Col),example ));
 		
 	}
 	
 	@Test
 	public void getColumn_test2() {
 		int Col = 1;
-		int[][] LatinSquare = {{1,2,3},{3,1,2},{2,3,1}};
-		int[] getColumn = new int[LatinSquare[Col].length];
-		for (int i=0 ;i<LatinSquare[Col].length;i++) {
-			getColumn[i]=LatinSquare[i][Col];
-		}
-		int[] example = {2,1,3};
-		assertTrue(Arrays.equals(getColumn,example ));
+		int[][] latinSquare = {{1,2,3},{3,1,2},{2,3,1}};
+		LatinSquare lq = new LatinSquare();	
+		lq.setLatinSquare(latinSquare);
 		
+		int[] example = {2,1,3};
+		assertTrue(Arrays.equals(lq.getColumn(Col),example ));
+	
 	}
 	
 	@Test
 	public void getRow_test1() {
 		int Row = 1;
-		int[][] LatinSquare = {{1,2,3},{3,1,2},{2,3,1}};
-		int[] getRow = new int[LatinSquare[Row].length];
-		for (int i=0 ;i<LatinSquare[Row].length;i++) {
-			getRow[i]=LatinSquare[Row][i];
-		}
-		int[] example = {2,1,3};
-		assertFalse(Arrays.equals(getRow,example ));
+		int[][] latinSquare = {{1,2,3},{3,1,2},{2,3,1}};
+		LatinSquare lq = new LatinSquare();	
+		lq.setLatinSquare(latinSquare);
+		
+		int[] example = {1,2,3};
+		assertFalse(Arrays.equals(lq.getRow(Row),example ));
 		
 	}
 	
 	@Test
 	public void getRow_test2() {
 		int Row = 1;
-		int[][] LatinSquare = {{1,2,3},{3,1,2},{2,3,1}};
-		int[] getRow = new int[LatinSquare[Row].length];
-		for (int i=0 ;i<LatinSquare[Row].length;i++) {
-			getRow[i]=LatinSquare[Row][i];
-		}
-		int[] example = {3,1,2};
-		assertTrue(Arrays.equals(getRow,example ));
+		int[][] latinSquare = {{1,2,3},{3,1,2},{2,3,1}};
+		LatinSquare lq = new LatinSquare();	
+		lq.setLatinSquare(latinSquare);
 		
+		int[] example = {3,1,2};
+		assertTrue(Arrays.equals(lq.getRow(Row),example ));
+	
 	}
 	@Test
 	public void isLatinSquare_test1() {
